@@ -1,0 +1,1 @@
+get all urls with parameters -> echo http://sub.target.com | waybckurls | grep "\?" | uro | httpx -silent > parameters.txt [grep for ?, declutter urls with uro and validate with httpx]
