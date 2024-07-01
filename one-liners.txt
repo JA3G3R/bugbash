@@ -1,1 +1,2 @@
-echo http://sub.target.com | waybckurls | grep "\?" | uro | httpx -silent | tee -a parameters.txt: get all urls with parameters.grep for '?', declutter urls with uro and validate with httpx.
+echo http://sub.target.com | waybckurls | grep "\?" | uro | httpx -silent | tee -a parameters.txt ::: get all urls with parameters.grep for '?', declutter urls with uro and validate with httpx.
+shodan search org:"Target" http.favicon.hash:<hash> --fields ip_str,port --separator " " | awk '{print $1":"$2}' | sort -u | tee -a web_apps.txt ::: Find web applications from favicon hash 
